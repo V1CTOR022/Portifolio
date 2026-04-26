@@ -1,24 +1,17 @@
-/* ----------------------------------------
-   VICTOR YURI - PORTFOLIO
-   Plain JavaScript
-   ---------------------------------------- */
-
 (function () {
   "use strict";
 
-  /* ------ PRELOADER ------ */
   const preloader = document.getElementById("preloader");
   const counterEl = document.getElementById("preloader-counter");
 
   if (preloader && counterEl) {
     let progress = 0;
     const startedAt = performance.now();
-    const duration = 900; // total animation length in ms
+    const duration = 900;
 
     const tickPre = () => {
       const elapsed = performance.now() - startedAt;
       const t = Math.min(1, elapsed / duration);
-      // Ease-out for the count
       const eased = 1 - Math.pow(1 - t, 2);
       progress = Math.floor(eased * 100);
       counterEl.textContent = String(progress).padStart(3, "0");
@@ -27,11 +20,9 @@
         requestAnimationFrame(tickPre);
       } else {
         counterEl.textContent = "100";
-        // Hold a tiny moment then slide up like a curtain
         setTimeout(() => {
           preloader.classList.add("is-out");
           document.body.classList.remove("is-loading");
-          // Remove from DOM after the transition for cleanliness
           setTimeout(() => preloader.remove(), 1500);
         }, 350);
       }
@@ -41,7 +32,6 @@
     document.body.classList.remove("is-loading");
   }
 
-  /* ------ DATA ------ */
   const projects = [
     { title: "NutriStats", category: "Web / HTML, CSS, JavaScript", image: "./images/project1.png", year: "2026", coverStyle: "background:#1f4d2e;" },
     { title: "Assgard Analytics", category: "App Mobile /React Native, TypeScript", image: "./images/project2.png", year: "2026", imgStyle: "object-position: center 10%;" },
@@ -77,11 +67,9 @@
     }
   ];
 
-  /* ------ DOM HELPERS ------ */
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
-  /* ------ RENDER PROJECTS ------ */
   const workGrid = $("#work-grid");
   if (workGrid) {
     workGrid.innerHTML = projects
@@ -103,7 +91,6 @@
       .join("");
   }
 
-  /* ------ RENDER SERVICES ------ */
   const servicesList = $("#services-list");
   if (servicesList) {
     servicesList.innerHTML = services
@@ -120,15 +107,14 @@
       .join("");
   }
 
-  /* ------ FOOTER YEAR ------ */
   const yearEl = $("#year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-  /* ------ NAV SCROLL BACKGROUND + HIDE/SHOW ------ */
   const nav = $("#nav");
   let lastScrollY = window.scrollY;
   const onScroll = () => {
     if (!nav) return;
+    if (nav.classList.contains("is-open")) return;
     const y = window.scrollY;
     if (y > 100) nav.classList.add("is-scrolled");
     else nav.classList.remove("is-scrolled");
@@ -139,16 +125,32 @@
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
-  /* ------ MOBILE MENU TOGGLE (simple anchor scroll, no overlay) ------ */
   const menuToggle = $("#menu-toggle");
-  if (menuToggle) {
+  if (menuToggle && nav) {
+    const openMenu = () => {
+      nav.classList.add("is-open");
+      nav.classList.remove("is-hidden");
+      menuToggle.textContent = "Fechar";
+      menuToggle.setAttribute("aria-label", "Fechar menu");
+      document.body.style.overflow = "hidden";
+    };
+    const closeMenu = () => {
+      nav.classList.remove("is-open");
+      menuToggle.textContent = "Menu";
+      menuToggle.setAttribute("aria-label", "Abrir menu");
+      document.body.style.overflow = "";
+    };
+
     menuToggle.addEventListener("click", () => {
-      const target = document.querySelector("#work");
-      if (target) target.scrollIntoView({ behavior: "smooth" });
+      if (nav.classList.contains("is-open")) closeMenu();
+      else openMenu();
+    });
+
+    $$(".nav__links a").forEach((link) => {
+      link.addEventListener("click", () => closeMenu());
     });
   }
 
-  /* ------ INTERSECTION OBSERVER REVEALS ------ */
   const observe = (selector, className = "is-in", threshold = 0.15) => {
     const els = $$(selector);
     if (!("IntersectionObserver" in window)) {
@@ -174,7 +176,6 @@
   observe(".work__card");
   observe(".service");
 
-  /* ------ CUSTOM CURSOR ------ */
   const cursor = $("#cursor");
   const cursorDot = $("#cursor-dot");
 
@@ -230,11 +231,10 @@
     });
   }
 
-  /* ------ MARQUEE ANIMATION ------ */
   const initMarquee = (track, direction) => {
     if (!track) return;
     let offset = 0;
-    const speed = 0.5 * direction; // px per frame
+    const speed = 0.5 * direction;
     const tick = () => {
       offset += speed;
       const width = track.scrollWidth / 2;
@@ -249,7 +249,6 @@
   initMarquee($("#marquee-1"), -1);
   initMarquee($("#marquee-2"), 1);
 
-  /* ------ SMOOTH SCROLL FOR ANCHOR LINKS ------ */
   $$('a[href^="#"]').forEach((a) => {
     a.addEventListener("click", (e) => {
       const href = a.getAttribute("href");
