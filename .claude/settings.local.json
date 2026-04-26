@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp \"c:/Users/Yashiro/Downloads/lavajato.png\" \"c:/FINALMENTE/images/project4.png\")",
+      "Bash(cp \"c:/Users/Yashiro/Downloads/fut.jpg\" \"c:/FINALMENTE/images/project3.png\")"
+    ]
+  }
+}

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>Victor Yuri — Desenvolvedor de Software</title>
+    <meta name="description" content="Portfolio de Victor Yuri, desenvolvedor de software. Aplicações web, APIs e infraestrutura com TypeScript, React, Node.js e Python." />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="is-loading">
+    <div class="preloader" id="preloader" aria-hidden="true">
+      <div class="preloader__center">
+        <h2 class="preloader__name">VICTOR YURI<sup>&reg;</sup></h2>
+      </div>
+      <div class="preloader__counter" id="preloader-counter">000</div>
+    </div>
+
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-dot" id="cursor-dot"></div>
+
+    <header class="nav" id="nav">
+      <a href="#top" class="nav__logo interactive">VICTOR YURI<span class="nav__logo-dot">.</span></a>
+      <nav class="nav__links">
+        <a href="#work" class="interactive">Projetos</a>
+        <a href="#about" class="interactive">Sobre</a>
+        <a href="#contact" class="interactive">Contato</a>
+      </nav>
+      <button class="nav__menu interactive" id="menu-toggle" aria-label="Abrir menu">Menu</button>
+    </header>
+
+    <main id="top">
+      <!-- HERO -->
+      <section class="hero">
+        <span class="code-mark code-mark--tr" aria-hidden="true">&lt;/&gt;</span>
+        <span class="code-mark code-mark--bl" aria-hidden="true">&lt;/&gt;</span>
+        <div class="container hero__inner">
+          <p class="hero__eyebrow reveal">Victor Yuri &mdash; Desenvolvedor de Software &mdash; Disponível para projetos</p>
+
+          <h1 class="hero__title">
+            <span class="reveal-line"><span>Software</span></span>
+            <span class="reveal-line"><span class="accent-text">Limpo,</span></span>
+            <span class="reveal-line hero__title-row"><span class="hero__title-rule"></span><span>Bem Feito</span></span>
+          </h1>
+
+          <div class="hero__bottom reveal">
+            <p>
+Construindo soluções de software com foco em clareza, organização e evolução constante.
+Atenção aos detalhes e aplicação de boas práticas desde o início.          </div>
+        </div>
+        <div class="hero__glow" aria-hidden="true"></div>
+      </section>
+
+      <!-- WORK -->
+      <section id="work" class="section work">
+        <span class="code-mark code-mark--tr" aria-hidden="true">&lt;/&gt;</span>
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">Projetos <span class="code-mark code-mark--inline" aria-hidden="true">&lt;/&gt;</span></h2>
+            <p class="section__meta">Trabalhos Selecionados (25&ndash;26)</p>
+          </div>
+
+          <div class="work__grid" id="work-grid">
+            <!-- Cards rendered by script.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- MARQUEE -->
+      <section class="marquee">
+        <div class="marquee__rotate">
+          <div class="marquee__row" data-direction="-1">
+            <div class="marquee__track" id="marquee-1">
+              <span>PYTHON &bull; FLASK &bull; GIT &bull;&nbsp;</span>
+              <span>HTML &bull; CSS &bull; JAVASCRIPT &bull;&nbsp;</span>
+              <span>MYSQL &bull; TYPESCRIPT &bull; CANVAS &bull;&nbsp;</span>
+              <span>BACKEND &bull; FRONTEND &bull; PHP &bull;&nbsp;</span>
+            </div>
+          </div>
+          <div class="marquee__row" data-direction="1">
+            <div class="marquee__track" id="marquee-2">
+              <span>PYTHON &bull; FLASK &bull; WEB &bull;&nbsp;</span>
+              <span>HTML &bull; CSS &bull; JAVASCRIPT &bull;&nbsp;</span>
+              <span>MYSQL &bull; TYPESCRIPT &bull; CANVAS &bull;&nbsp;</span>
+              <span>BACKEND &bull; FRONTEND &bull; PHP &bull;&nbsp;</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section class="section services">
+        <span class="code-mark code-mark--tl" aria-hidden="true">&lt;/&gt;</span>
+        <span class="code-mark code-mark--br" aria-hidden="true">&lt;/&gt;</span>
+        <div class="container">
+          <div class="services__grid">
+            <div class="services__sticky">
+              <h2 class="services__title reveal">Competências <span class="code-mark code-mark--inline" aria-hidden="true">&lt;/&gt;</span></h2>
+            </div>
+
+            <div class="services__list" id="services-list">
+              <!-- Items rendered by script.js -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="section about">
+        <span class="code-mark code-mark--tr code-mark--light" aria-hidden="true">&lt;/&gt;</span>
+        <span class="code-mark code-mark--bl code-mark--light" aria-hidden="true">&lt;/&gt;</span>
+        <div class="container about__grid">
+          <div class="about__col-left">
+            <div class="about__photo">
+              <img
+                src="./images/photo.jpg"
+                alt="Victor Yuri"
+                onerror="this.style.display='none'; this.parentElement.classList.add('is-empty');"
+              />
+              <span class="about__photo-hint">Sua foto aqui<br /><small>substitua <code>public/images/photo.jpg</code></small></span>
+            </div>
+            <h2 class="about__eyebrow">Manifesto</h2>
+            <div class="about__rule"></div>
+          </div>
+
+          <div class="about__col-right">
+            <h3 class="about__statement reveal">
+              Desenvolvimento de software com foco em aprendizado e <em>boas práticas</em>. Construindo soluções organizadas com foco em evoluir .
+            </h3>
+
+            <div class="about__paragraphs">
+              <p>
+                Sou Victor Yuri, desenvolvedor de software com foco na construção de aplicações web modernas,análise de dados, APIs, e integrações.
+Atuo no desenvolvimento de sistemas eficientes, organizados e preparados para crescimento sustentável.
+
+Tenho como prioridade entregar código limpo, bem estruturado e de fácil manutenção, garantindo consistência e confiabilidade ao longo do tempo.
+              </p>
+              <p>
+Trabalho com boas práticas de desenvolvimento, incluindo testes, revisão de código e documentação.
+Acredito que performance, segurança e manutenibilidade são elementos essenciais em qualquer projeto.
+
+Busco sempre desenvolver soluções que sejam não apenas funcionais, mas também sustentáveis e escaláveis.              </p>
+            </div>
+
+            <div class="about__details">
+              <div>
+                <h4>Stack</h4>
+                <ul>
+                  <li>Python</li>
+                  <li>HTML / CSS</li>
+                  <li>PHP</li>
+                  <li>JavaScript / TypeScript</li>
+                  </li>React Native</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Ferramentas</h4>
+                <ul>
+                  <li>Git</li>
+                  <li>Tailwind CSS</li>
+                  <li>Vercel</li>
+                  <li>Figma</li>
+                </ul>
+              </div>
+              <div class="about__details-wide">
+                <h4>Princípios</h4>
+                <ul>
+                  <li>Foco em qualidade e organização</li>
+                  <li>Desenvolvimento com boas práticas</li>
+                  <li>Clareza na comunicação e no código</li>
+                  <li>Aprendizado contínuo</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="section contact">
+        <span class="code-mark code-mark--tr" aria-hidden="true">&lt;/&gt;</span>
+        <div class="container contact__inner">
+          <div>
+            <h2 class="contact__eyebrow">Vamos conversar</h2>
+            <a href="mailto:vgvitinho80@gmail.com" class="contact__email interactive">
+              vgvitinho80@<br />gmail.com
+            </a>
+
+            <div class="contact__details">
+              <div>
+                <h4>Localização</h4>
+                <p>Brasil</p>
+                <p>Niterói, RJ</p>
+              </div>
+              <div>
+                <h4>Redes</h4>
+                <ul>
+                  <li><a href="https://github.com/V1CTOR022" class="interactive">GitHub</a></li>
+                  <li><a href="https://www.linkedin.com/in/victor-yuri-65147136a/" class="interactive">LinkedIn</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4>Telefone</h4>
+                <ul>
+                  <li><a href="https://wa.me/5521991212764?text=Ol%C3%A1!%20Vim%20pelo%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar.%20Voc%C3%AA%20est%C3%A1%20dispon%C3%ADvel%3F%0A" class="interactive">(21) 99121-2764</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <footer class="footer">
+            <p>&copy; <span id="year"></span> Victor Yuri</p>
+            <p>Todos os direitos reservados</p>
+          </footer>
+        </div>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
