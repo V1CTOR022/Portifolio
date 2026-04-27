@@ -33,11 +33,11 @@
   }
 
   const projects = [
-    { title: "NutriStats", category: "Web / HTML, CSS, JavaScript", image: "./images/project1.png", year: "2026", coverStyle: "background:#1f4d2e;" },
-    { title: "Assgard Analytics", category: "App Mobile /React Native, TypeScript", image: "./images/project2.png", year: "2026", imgStyle: "object-position: center 10%;" },
-    { title: "FutStats", category: "Dashboard / Python, Flask", image: "./images/project3.png", year: "2026", imgStyle: "object-position: left 5%;" },
-    { title: "Magalhães Steticcar", category: "Painel SaaS / Next.js + Prisma", image: "./images/project4.png", year: "2026", imgStyle: "object-position: 35% center;" },
-    { title: "Read Log", category: "Pipeline de Dados / Python + Kafka", image: "./images/project5.png", year: "2025", imgStyle: "object-position: left center;" }
+    { title: "NutriStats", category: "Site de monitoramento calórico / HTML, CSS, JavaScript", image: "./images/project1.png", year: "2026", coverStyle: "background:#1f4d2e;" },
+    { title: "Assgard Analytics", category: "App Mobile de Gerenciamento de Gastos /React Native, TypeScript", image: "./images/project2.png", year: "2026", imgStyle: "object-position: center 10%;" },
+    { title: "FutStats", category: "Dashboard de Desempenho Futebolistico / Python, Flask", image: "./images/project3.png", year: "2026", imgStyle: "object-position: left 5%;" },
+    { title: "Magalhães Steticcar", category: "Site De Lavagem Automotiva / HTML, CSS, JavaScript", image: "./images/project4.png", year: "2026", imgStyle: "object-position: 35% center;" },
+    { title: "Read Log", category: "Site para Registrar Leituras / HTML, CSS, JavaScript, PHP", image: "./images/project5.png", year: "2025", imgStyle: "object-position: left center;" }
   ];
 
   const services = [
